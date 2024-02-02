@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<Dogsite.Models.Image>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images</title>
+</head>
+<body>
+    <h1>Images</h1>
+    <div>
+        @foreach (var image in Model)
+        {
+            <img src="@Url.Action("GetImage", "Home", new { id = image.ImageID })" alt="@image.ImageName" />
+        }
+    </div>
+</body>
+</html>
+
